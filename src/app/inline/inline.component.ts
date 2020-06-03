@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 // para usar en el template mas de una linea se necesita usar el backtick
 @Component({

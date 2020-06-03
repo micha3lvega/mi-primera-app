@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { PersonasComponent } from './personas/personas.component';
 import { PersonaComponent } from './persona/persona.component';
 import { SimpleComponent } from './simple/simple.component';
-import { BackTickComponent } from './inline/inline.component';
+import { InlineComponent } from './inline/inline.component';
 
 @NgModule({
   declarations: [
