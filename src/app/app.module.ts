@@ -4,9 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { PersonasComponent } from './personas/personas.component';
 import { PersonaComponent } from './persona/persona.component';
+import { SimpleComponent } from './simple/simple.component';
 
 @NgModule({
-  declarations: [AppComponent, PersonasComponent, PersonaComponent],
+  declarations: [AppComponent, PersonasComponent, PersonaComponent, SimpleComponent],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
