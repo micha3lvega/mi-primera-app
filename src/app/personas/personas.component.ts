@@ -9,6 +9,7 @@ export class PersonasComponent implements OnInit {
   disableButton = true;
   labelButton = 'Disable';
   classButton = 'btn btn-danger';
+  clicks: number = 0;
 
   ngOnInit(): void {
     setTimeout(() => {
@@ -16,5 +17,9 @@ export class PersonasComponent implements OnInit {
       this.labelButton = 'Enable';
       this.classButton = 'btn btn-primary';
     }, 3000);
+  }
+
+  onClick(): void {
+    this.clicks++;
   }
 }
