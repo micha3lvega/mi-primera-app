@@ -10,4 +10,19 @@
   </button>
   <br />
   Se han dado {{ clicks }} clicks
+  <div class="row">
+    <div class="col" style="text-align: left;">
+      <div class="form-group">
+        <label for="inputText">Texto:</label>
+        <input
+          id="inputText"
+          class="form-control"
+          type="text"
+          name="inputText"
+          (input)="onChangeValue($event)"
+        />
+        {{ textValue }}
+      </div>
+    </div>
+  </div>
 </div>

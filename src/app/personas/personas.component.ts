@@ -10,6 +10,7 @@ export class PersonasComponent implements OnInit {
   labelButton = 'Disable';
   classButton = 'btn btn-danger';
   clicks: number = 0;
+  textValue: string = '';
 
   ngOnInit(): void {
     setTimeout(() => {
@@ -21,5 +22,9 @@ export class PersonasComponent implements OnInit {
 
   onClick(): void {
     this.clicks++;
+  }
+
+  onChangeValue(event: Event) {
+    this.textValue = (<HTMLInputElement>event.target).value;
   }
 }
