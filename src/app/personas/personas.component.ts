@@ -23,8 +23,4 @@ export class PersonasComponent implements OnInit {
   onClick(): void {
     this.clicks++;
   }
-
-  onChangeValue(event: Event) {
-    this.textValue = (<HTMLInputElement>event.target).value;
-  }
 }
