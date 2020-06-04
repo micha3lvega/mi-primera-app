@@ -9,7 +9,7 @@
     {{ labelButton }}
   </button>
   <br />
-  Se han dado {{ clicks }} clicks
+  <p *ngIf="clicks > 0">Se han dado {{ clicks }} clicks</p>
   <div class="row">
     <div class="col" style="text-align: left;">
       <div class="form-group">
