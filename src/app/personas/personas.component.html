@@ -14,25 +14,61 @@
   </button>
   <br />
   <p *ngIf="clicks > 0; else noClickCounter">Se han dado {{ clicks }} clicks</p>
-  <div class="row">
-    <div class="col">
-      <ng-template #emptyName>
-        <p>Ingresa tu nombre</p>
-      </ng-template>
+
+  <h1>Agregar personas</h1>
+  <!-- //ngNativeValidate sirve pata validar un formulario -->
+
+  <form (ngSubmit)="onAddPerson()" ngNativeValidate #form>
+    <div class="row" style="text-align: left;">
+      <div class="col">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input
+            required
+            minlength="4"
+            id="name"
+            class="form-control"
+            type="text"
+            name="name"
+            [(ngModel)]="name"
+          />
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <label for="lastName">Apellidos:</label>
+          <input
+            required="true"
+            id="lastName"
+            class="form-control"
+            type="text"
+            name="lastName"
+            [(ngModel)]="lastName"
+          />
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col" style="text-align: left;">
-      <div class="form-group">
-        <label for="inputText">Nombre:</label>
-        <input
-          id="inputText"
-          class="form-control"
-          type="text"
-          name="inputText"
-          [(ngModel)]="textValue"
-        />
-        <p *ngIf="textValue; else emptyName">Hola {{ textValue }}!</p>
+
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <button class="btn btn-success">
+            Agregar persona
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div class="container" style="text-align: left;">
+    <div class="row">
+      <div class="col">
+        <ul>
+          <li *ngFor="let persona of personas">
+            {{ persona.name }} {{ persona.lastName }}
+          </li>
+        </ul>
       </div>
     </div>
   </div>

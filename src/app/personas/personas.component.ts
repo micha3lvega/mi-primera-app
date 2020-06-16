@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Persona } from './../persona/persona.model';
 
 @Component({
   selector: 'app-personas',
@@ -12,6 +13,11 @@ export class PersonasComponent implements OnInit {
   clicks: number = 0;
   textValue: string = '';
 
+  name: string;
+  lastName: string;
+
+  personas: Persona[] = [];
+
   ngOnInit(): void {
     setTimeout(() => {
       this.disableButton = false;
@@ -22,5 +28,12 @@ export class PersonasComponent implements OnInit {
 
   onClick(): void {
     this.clicks++;
+  }
+
+  onAddPerson(): void {
+    let persona = new Persona(this.name, this.lastName);
+    this.personas.push(persona);
+    this.name = null;
+    this.lastName = null;
   }
 }
